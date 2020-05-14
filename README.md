@@ -30,3 +30,5 @@ How?
  ----
  
 ... is  requisted and needed, feel free to contact for more info.
+
+<img src="documentation.modules.ROOT.assets/images/info_schema_sql_hak.png">
