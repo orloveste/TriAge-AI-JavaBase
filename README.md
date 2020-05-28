@@ -30,3 +30,10 @@ How?
  ----
  
 ... is  requisted and needed, feel free to contact for more info.
+
+
+## `Step 1`
+- Created Abstract Class for new entry (not clear if will be needed and how - it is a presupposition 
+ for using Interfaces);
+- Created a class for new entry and HibernateUtil class  for connection with DB SQL
+- Created Service class for new Entry - for taking ID-s from DB and register DGPR answer
