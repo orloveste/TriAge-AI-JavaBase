@@ -12,6 +12,10 @@ public abstract class Entry_Container {
         return idAccept_DGPR;
     }
 
+    public void setIdAccept_DGPR(int idAccept_DGPR) {
+        this.idAccept_DGPR = idAccept_DGPR;
+    }
+
     public boolean isAccept_DGPR() {
         return accept_DGPR;
     }

@@ -1,0 +1,5 @@
+Proposal for automated testing.
+todo research
+https://junit.org/junit5/docs/current/user-guide/
+todo research
+https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/
