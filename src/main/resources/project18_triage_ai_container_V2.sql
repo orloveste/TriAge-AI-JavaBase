@@ -48,30 +48,14 @@ create table triage.personal_data
     date_of_birth date,
     current_address varchar(35) not null,
     validityId boolean,
-    insurence_code long,
+    insurance_code long,
     idPatient int unsigned,
     foreign key (idPatient) references triage.patient(idPatient)
 );
 
-create table triage.high_risk
+create table triage.risk_level
 (
-    idHighRisk int unsigned auto_increment primary key,
-    riskValue int unsigned,
-    idHeight int unsigned,
-    idWeight int unsigned,
-    idTemperature int unsigned,
-    idPersonal_data int unsigned,
-    idPatient int unsigned,
-    foreign key (idHeight) references triage.height(idHeight),
-    foreign key (idWeight) references triage.weight(idWeight),
-    foreign key (idTemperature) references triage.temperature(idTemperature),
-    foreign key (idPersonal_data) references triage.personal_data(idPersonal_data),
-    foreign key (idPatient) references triage.patient(idPatient)
-);
-
-create table triage.low_risk
-(
-    idLowRisk int unsigned auto_increment primary key,
+    idRisk int unsigned auto_increment primary key,
     riskValue int unsigned,
     idHeight int unsigned,
     idWeight int unsigned,
@@ -89,11 +73,10 @@ create table triage.audio_video_DGPR
 (
     idAudioVideo_accept_DGPR int unsigned auto_increment primary key,
     AudioVideo_accept_DGPR boolean,
-    idHighRisk int unsigned,
-    idLowRisk int unsigned,
+    idRisk int unsigned,
+
     idPatient int unsigned,
-    foreign key (idHighRisk) references triage.high_risk(idHighRisk),
-    foreign key (idLowRisk) references triage.low_risk(idLowRisk),
+    foreign key (idRisk) references triage.risk_level(idRisk),
     foreign key (idPatient) references triage.patient(idPatient)
 );
 
@@ -245,7 +228,7 @@ VALUES (39.3, 39, 36.7, 1),
        (39.4, 39, 36.9, 6),
        (45.1, 39.2, 36.6, 7),
        (39.9, 39.1, 36.7, 8);
-insert into triage.personal_data(personal_identification_code, first_name, last_name, place_of_birth, date_of_birth, current_address, validityId, insurence_code, idPatient)
+insert into triage.personal_data(personal_identification_code, first_name, last_name, place_of_birth, date_of_birth, current_address, validityId, insurance_code, idPatient)
 VALUES (237907,'Ruby','Gulliany','Kazahstan',19871210,'Slovenia, Ubjei ulitze 5',true, 0988, 1),
        (2387187,'Jan', 'De-La-Coada-Vacii', 'Undeva Departe', 20001201, 'Sus pe strada nr.2', true, 9009938, 2),
        (8271837,'Jonny','Drago','Bibilica Veche',19991103, 'Copacei de munte', true,364748,3),
@@ -254,7 +237,7 @@ VALUES (237907,'Ruby','Gulliany','Kazahstan',19871210,'Slovenia, Ubjei ulitze 5'
        (832486,'Janse', 'Deacii', 'Undeva Departe', 20001201, 'Susschi str nr.2', true, 9045, 6),
        (372487,'Joy','Dgo','Bibilche',191103, 'Copaunte', true,36454,7),
        (7482843,'Scuzdedi', 'Lamda', 'Jovvuri', 200103, 'Joja West', true, 8445475, 8);
-insert into triage.high_risk (riskValue)
+insert into triage.risk_level (riskValue)
 values (10), (8), (7), (9);
-insert into triage.low_risk (riskValue)
+insert into triage.risk_level (riskValue)
 values (1), (5), (2), (0);

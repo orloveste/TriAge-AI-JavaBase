@@ -3,15 +3,19 @@ import java.util.Scanner;
 public class Runner {
     public static void main(String[] args) {
         Hello();
+        ReadTemperature();
+        HeightMeasurement();
+        WeightMeasurement();
+        ShoesDisinfection();
 
-        Entry_Service entry_service = Entry_Service.getInstance();
+        /*Entry_Service entry_service = Entry_Service.getInstance();
 
         System.out.println("get id 10 = " + entry_service.getEntry(10)); //ok
         System.out.println("create new entry = ");
         entry_service.createEntry(true); //ToDo 1 = not transmitting  in Entry_Service data
         System.out.println("get new entry id 11" + entry_service.getEntry(11));
 
-        HibernateUtil.shutdown();
+        HibernateUtil.shutdown();*/
     }
 
     private static void Hello() {
@@ -36,7 +40,19 @@ public class Runner {
             default:
                 System.out.println("Accepted choice: Y / N");
         }
-
-
     }
+
+    private static void ShoesDisinfection() {
+    }
+
+    private static void WeightMeasurement() {
+    }
+
+    private static void HeightMeasurement() {
+    }
+
+    private static void ReadTemperature() {
+    }
+
+
 }
