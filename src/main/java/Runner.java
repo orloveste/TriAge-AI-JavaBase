@@ -1,8 +1,10 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Runner {
     public static void main(String[] args) {
         Hello();
+        System.out.println("In/OutPut data:");
         ReadTemperature();
         HeightMeasurement();
         WeightMeasurement();
@@ -43,9 +45,21 @@ public class Runner {
     }
 
     private static void ShoesDisinfection() {
+
     }
 
     private static void WeightMeasurement() {
+        int idWeight = 0;
+        idWeight++;
+        System.out.println("idWeight " + idWeight);
+
+        Random r = new Random();
+
+        int low = 30; //kg toDo check equipment specification
+        int high = 250; //kg toDo check equipment specification
+
+        int patientWeight = r.nextInt(high-low) + low;
+        System.out.println("3. patientWeight: " + patientWeight + "kg");
     }
 
     private static void HeightMeasurement() {
