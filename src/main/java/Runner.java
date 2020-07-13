@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Runner {
     public static void main(String[] args) {
         Hello();
+        System.out.println("Test");
 
         Entry_Service entry_service = Entry_Service.getInstance();
 
